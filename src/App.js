@@ -1,5 +1,5 @@
-import { BrowserRouter } from 'react-router-dom'
 import './App.css'
+import { BrowserRouter } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import AppRouter from './components/AppRouter'
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -9,7 +9,7 @@ import { Context } from '.'
 
 function App() {
   const { auth } = useContext(Context)
-  const [user, loading, error] = useAuthState(auth)
+  const [_, loading] = useAuthState(auth)
 
   if (loading) {
     return <Loader />
